@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ⚡ lang="id">
+<html lang="id">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,23 +21,16 @@
 <!-- Favicon -->
 <link rel="icon" href="https://gambarku.fit/IMG_Jalak4D/FAV%20Jalak4D.png" type="image/png">
 
-<!-- Canonical & AMP HTML -->
+<!-- Canonical & AMP HTML (Inilah yang membuat AMP Validator berwarna BIRU) -->
 <link rel="canonical" href="https://jalak4d.vercel.app/">
 <link rel="amphtml" href="https://jalakamp.vercel.app/" />
-
-<!-- AMP Core Scripts -->
-<script async src="https://cdn.ampproject.org/v0.js"></script>
-<script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
-
-<!-- AMP Boilerplate CSS -->
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
 <!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-<style amp-custom>
+<style>
   :root{
     --void:#05050a;
     --glass-bg: rgba(255, 255, 255, 0.03);
@@ -199,7 +192,7 @@
     padding: 80px 28px 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto; /* Dua baris untuk mengatur tombol di desktop */
+    grid-template-rows: auto auto;
     align-items: center;
     column-gap: 48px;
     row-gap: 20px;
@@ -215,7 +208,7 @@
     justify-content: flex-start; width: 100%; max-width: 480px; margin: 0; 
   }
   .banner-col { 
-    grid-column: 1; grid-row: 1 / span 2; /* Banner memenuhi 2 baris di sisi kiri desktop */
+    grid-column: 1; grid-row: 1 / span 2;
     display: flex; flex-direction: column; gap: 20px; position: relative; 
   }
   
@@ -402,7 +395,7 @@
     background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
     display: flex; justify-content: center; align-items: center; z-index: 99999;
   }
-  .popup-hide { display: none; } 
+  .popup-hide { display: none !important; } 
   
   .popup-container {
     position: relative; width: 90%; max-width: 420px;
@@ -453,9 +446,9 @@
   .clk-btn-sgp a:hover::after { opacity: 1; }
   .clk-btn-sgp a:hover { transform: translateY(-6px) scale(1.03); border-color: #ffd700; }
   
-  .login { color: #ffd700; background: linear-gradient(145deg, #535050, #000000); border: 2px solid #cabe0c; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
-  .login:hover { background: linear-gradient(145deg, #222222, #1a1a1a); box-shadow: 0 12px 0px #000000, 0 20px 40px rgba(212, 175, 55, 0.4), 0 0 30px rgba(255, 215, 0, 0.2); color: #fff8dc; }
-  .register { color: #000000; background: linear-gradient(145deg, #faea07, #cabe0c); border: 2px solid #000000; text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3); }
+  .login { color: #ffd700 !important; background: linear-gradient(145deg, #535050, #000000); border: 2px solid #cabe0c; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+  .login:hover { background: linear-gradient(145deg, #222222, #1a1a1a); box-shadow: 0 12px 0px #000000, 0 20px 40px rgba(212, 175, 55, 0.4), 0 0 30px rgba(255, 215, 0, 0.2); color: #fff8dc !important; }
+  .register { color: #000000 !important; background: linear-gradient(145deg, #faea07, #cabe0c); border: 2px solid #000000; text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3); }
   .register:hover { background: linear-gradient(145deg, #ffd700, #faea07); box-shadow: 0 12px 0px #000000, 0 20px 40px rgba(212, 175, 55, 0.5), 0 0 35px rgba(255, 215, 0, 0.3); }
   
   .popup-footer { font-size: 13px; color: #ccc; padding: 20px 10px; position: relative; z-index: 3; line-height: 1.6; font-family: 'Playfair Display', serif; }
@@ -504,7 +497,7 @@
       text-decoration: none; user-select: none; white-space: nowrap; text-transform: uppercase;
   }
 
-  .footer-btn-jalak amp-img { width: 18px; height: 18px; flex-shrink: 0; }
+  .footer-btn-jalak img { width: 18px; height: 18px; flex-shrink: 0; }
 
   .footer-btn-jalak.promo { animation-delay: 0s; border-color: var(--accent-gold); box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
   .footer-btn-jalak.login { animation-delay: 0.3s; }
@@ -521,12 +514,11 @@
   @keyframes floatUpDown { 0% { transform: translateY(0); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
 
   @media (max-width: 1024px) {
-      .footer-floating-jalak { display: none; }
+      .footer-floating-jalak { display: none !important; }
   }
 
   /* ===== RESPONSIVE UTAMA (MOBILE) ===== */
   @media(max-width:900px){
-    /* Ubah struktur grid menjadi 1 kolom, dan atur urutan: Tombol -> Banner -> Teks */
     .hero {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto; 
@@ -556,30 +548,23 @@
 </head>
 <body>
 
-<!-- AMP State untuk Interaksi Popup -->
-<amp-state id="ui">
-  <script type="application/json">
-  { "popupOpen": true }
-  </script>
-</amp-state>
-
 <!-- Background & Overlay -->
 <div class="bg-image"></div>
 <div class="overlay"></div>
 <div class="lightning"></div>
 
 <!-- WELCOME POPUP LUXURY GOLD -->
-<div class="popup-overlay" id="popupOverlay" [class]="ui.popupOpen ? 'popup-overlay' : 'popup-hide'" on="tap:AMP.setState({ui: {popupOpen: false}})" role="button" tabindex="0" aria-label="Tutup Popup">
-  <div class="popup-container" on="tap:AMP.stopPropagation()" role="button" tabindex="0" aria-label="Konten Popup">
+<div class="popup-overlay" id="popupOverlay" onclick="closePopup()">
+  <div class="popup-container" onclick="event.stopPropagation()">
     
-    <button type="button" class="close-btn" on="tap:AMP.setState({ui: {popupOpen: false}})"></button>
+    <button type="button" class="close-btn" onclick="closePopup()"></button>
     
     <div class="gold-particle" style="width: 10px; height: 10px; top: 15%; left: 12%; animation-delay: 0s;"></div>
     <div class="gold-particle" style="width: 8px; height: 8px; top: 35%; left: 88%; animation-delay: 1.5s;"></div>
     <div class="gold-particle" style="width: 12px; height: 12px; top: 65%; left: 18%; animation-delay: 3s;"></div>
     <div class="luxury-border"></div>
     
-    <amp-img src="https://ik.imagekit.io/i22mizicx/dgh.png" alt="Banner JALAK4D" width="800" height="1000" layout="responsive" class="popup-image"></amp-img>
+    <img src="https://ik.imagekit.io/i22mizicx/dgh.png" alt="Banner JALAK4D" class="popup-image" width="800" height="1000">
     
     <div class="clk-btn-sgp">
       <a href="https://jalakamp.vercel.app/" class="login">LOGIN</a>
@@ -596,7 +581,7 @@
 <header>
   <div class="nav-wrap">
     <a href="https://jalakamp.vercel.app/" class="brand">
-      <amp-img src="https://ik.imagekit.io/i22mizicx/ui.png" alt="Logo JALAK4D" width="150" height="50" layout="fixed"></amp-img>
+      <img src="https://ik.imagekit.io/i22mizicx/ui.png" alt="Logo JALAK4D" width="150" height="50">
     </a>
     <div class="nav-btns">
       <a href="https://jalakamp.vercel.app/" class="neon-btn">Login</a>
@@ -605,12 +590,12 @@
   </div>
   <div class="subnav-wrap">
     <nav class="badges">
-      <a href="https://jalakamp.vercel.app/"><amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" layout="fixed" alt="Logo"></amp-img> LOGIN JALAK4D</a>
-      <a href="https://jalakamp.vercel.app/"><amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" layout="fixed" alt="Logo"></amp-img> DAFTAR JALAK4D</a>
-      <a href="https://jalakamp.vercel.app/"><amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" layout="fixed" alt="Logo"></amp-img> BONUS JALAK4D</a>
-      <a href="https://jalakamp.vercel.app/"><amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" layout="fixed" alt="Logo"></amp-img> REVIEW JALAK4D</a>
-      <a href="https://jalakamp.vercel.app/"><amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" layout="fixed" alt="Logo"></amp-img> FAQ JALAK4D</a>
-      <a href="https://jalakamp.vercel.app/"><amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" layout="fixed" alt="Logo"></amp-img> FITUR JALAK4D</a>
+      <a href="https://jalakamp.vercel.app/"><img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" alt="Logo"> LOGIN JALAK4D</a>
+      <a href="https://jalakamp.vercel.app/"><img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" alt="Logo"> DAFTAR JALAK4D</a>
+      <a href="https://jalakamp.vercel.app/"><img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" alt="Logo"> BONUS JALAK4D</a>
+      <a href="https://jalakamp.vercel.app/"><img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" alt="Logo"> REVIEW JALAK4D</a>
+      <a href="https://jalakamp.vercel.app/"><img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" alt="Logo"> FAQ JALAK4D</a>
+      <a href="https://jalakamp.vercel.app/"><img src="https://ik.imagekit.io/i22mizicx/jhk.png" class="nav-badge-logo" width="16" height="16" alt="Logo"> FITUR JALAK4D</a>
     </nav>
   </div>
 </header>
@@ -639,7 +624,7 @@
       </div>
     </div>
 
-    <!-- 2. Tombol Login & Daftar (Dipindah keluar agar bisa diatur urutannya di Mobile) -->
+    <!-- 2. Tombol Login & Daftar -->
     <div class="hero-btns">
       <a href="https://jalakamp.vercel.app/" class="neon-btn large">LOGIN</a>
       <a href="https://jalakamp.vercel.app/" class="neon-btn large">DAFTAR</a>
@@ -650,17 +635,17 @@
       <div class="banner-wrap">
         <div class="banner-glow"></div>
         <div class="banner-frame">
-          <amp-img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Banner Utama JALAK4D" width="1000" height="1000" layout="responsive"></amp-img>
+          <img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Banner Utama JALAK4D" width="1000" height="1000">
         </div>
       </div>
 
       <div class="mini-thumbs">
-        <div class="mini-thumb"><span class="mini-num">01</span><amp-img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 1" width="100" height="100" layout="responsive"></amp-img><span class="mini-label">Shadow Protocol</span></div>
-        <div class="mini-thumb"><span class="mini-num">02</span><amp-img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 2" width="100" height="100" layout="responsive"></amp-img><span class="mini-label">Crimson Frontier</span></div>
-        <div class="mini-thumb"><span class="mini-num">03</span><amp-img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 3" width="100" height="100" layout="responsive"></amp-img><span class="mini-label">Void Racer</span></div>
-        <div class="mini-thumb"><span class="mini-num">04</span><amp-img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 4" width="100" height="100" layout="responsive"></amp-img><span class="mini-label">Ember Legends</span></div>
-        <div class="mini-thumb"><span class="mini-num">05</span><amp-img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 5" width="100" height="100" layout="responsive"></amp-img><span class="mini-label">Nexus Siege</span></div>
-        <div class="mini-thumb"><span class="mini-num">06</span><amp-img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 6" width="100" height="100" layout="responsive"></amp-img><span class="mini-label">Aether Drift</span></div>
+        <div class="mini-thumb"><span class="mini-num">01</span><img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 1" width="100" height="100"><span class="mini-label">Shadow Protocol</span></div>
+        <div class="mini-thumb"><span class="mini-num">02</span><img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 2" width="100" height="100"><span class="mini-label">Crimson Frontier</span></div>
+        <div class="mini-thumb"><span class="mini-num">03</span><img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 3" width="100" height="100"><span class="mini-label">Void Racer</span></div>
+        <div class="mini-thumb"><span class="mini-num">04</span><img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 4" width="100" height="100"><span class="mini-label">Ember Legends</span></div>
+        <div class="mini-thumb"><span class="mini-num">05</span><img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 5" width="100" height="100"><span class="mini-label">Nexus Siege</span></div>
+        <div class="mini-thumb"><span class="mini-num">06</span><img src="https://ik.imagekit.io/i22mizicx/fghjfr.png" alt="Thumb 6" width="100" height="100"><span class="mini-label">Aether Drift</span></div>
       </div>
     </div>
   </section>
@@ -788,7 +773,7 @@
   <div class="footer-container">
     <div class="footer-grid">
       <div class="footer-col">
-        <amp-img src="https://ik.imagekit.io/i22mizicx/ui.png" alt="Logo JALAK4D" width="150" height="50" layout="fixed" class="footer-brand-logo"></amp-img>
+        <img src="https://ik.imagekit.io/i22mizicx/ui.png" alt="Logo JALAK4D" width="150" height="50" class="footer-brand-logo">
         <p>JALAK4D adalah portal gaming dan slot premium yang menyediakan pengalaman bermain terbaik dengan server stabil dan komunitas aktif.</p>
       </div>
       <div class="footer-col">
@@ -824,19 +809,19 @@
 <!-- ===== FLOATING FOOTER MENU ===== -->
 <div class="footer-floating-jalak">
     <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak promo" target="_blank" rel="nofollow noopener">
-        <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Promo" width="18" height="18" layout="fixed"></amp-img> PROMO
+        <img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Promo" width="18" height="18"> PROMO
     </a>
     <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak login" target="_blank" rel="nofollow noopener">
-        <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Login" width="18" height="18" layout="fixed"></amp-img> LOGIN
+        <img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Login" width="18" height="18"> LOGIN
     </a>
     <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak daftar" target="_blank" rel="nofollow noopener">
-        <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Daftar" width="18" height="18" layout="fixed"></amp-img> DAFTAR
+        <img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Daftar" width="18" height="18"> DAFTAR
     </a>
     <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak link" target="_blank" rel="nofollow noopener">
-        <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Link Alternatif" width="18" height="18" layout="fixed"></amp-img> LINK ALTERNATIF
+        <img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Link Alternatif" width="18" height="18"> LINK ALTERNATIF
     </a>
     <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak chat" target="_blank" rel="nofollow noopener">
-        <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Live Chat" width="18" height="18" layout="fixed"></amp-img> LIVE CHAT
+        <img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Live Chat" width="18" height="18"> LIVE CHAT
     </a>
 </div>
 
@@ -859,6 +844,16 @@
   <span class="petal" style="left: 45%; animation: fallSakura2 17s linear infinite; animation-delay: 10s; width: 16px; height: 16px;"></span>
   <span class="petal" style="left: 75%; animation: fallSakura1 18s linear infinite; animation-delay: 12s; width: 11px; height: 11px;"></span>
 </div>
+
+<!-- Script JS Biasa untuk Menutup Popup -->
+<script>
+  function closePopup() {
+    var popup = document.getElementById('popupOverlay');
+    if (popup) {
+      popup.classList.add('popup-hide');
+    }
+  }
+</script>
 
 </body>
 </html>
