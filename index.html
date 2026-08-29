@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html ⚡ lang="id">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ===== SEO META TAGS ===== -->
@@ -16,13 +16,14 @@
 <meta property="og:title" content="JALAK4D Portal - Situs Resmi Gaming & Slot Maxwin">
 <meta property="og:description" content="Temukan jalak4d, jalak 4d, dan jalak untuk akses login daftar dengan RTP tertinggi dan maxwin.">
 <meta property="og:image" content="https://ik.imagekit.io/i22mizicx/fghjfr.png">
-<meta property="og:url" content="https://jalak-melambung-tinggi.pages.dev/">
+<meta property="og:url" content="https://jalak4d.vercel.app/">
 
 <!-- Favicon -->
 <link rel="icon" href="https://gambarku.fit/IMG_Jalak4D/FAV%20Jalak4D.png" type="image/png">
 
-<!-- Canonical -->
-<link rel="canonical" href="https://jalak-melambung-tinggi.pages.dev/">
+<!-- Canonical & AMP HTML -->
+<link rel="canonical" href="https://jalak4d.vercel.app/">
+<link rel="amphtml" href="https://jalakamp.vercel.app/" />
 
 <!-- AMP Core Scripts -->
 <script async src="https://cdn.ampproject.org/v0.js"></script>
@@ -71,38 +72,55 @@
   .bg-image {
     position: fixed; inset:-20px; z-index:-3;
     background: url('https://ik.imagekit.io/i22mizicx/fghjfr.png') center center / cover no-repeat;
-    /* brightness ditingkatkan dari 0.4 menjadi 0.85 */
     filter: blur(6px) brightness(0.85); transform: scale(1.1);
   }
-  /* Overlay dikurangi tingkat kegelapannya dari 0.6 menjadi 0.35 */
   .overlay { position: fixed; inset:0; background: rgba(0,0,0,0.35); z-index:-2; }
   
   /* ===== EFEK PETIR REALISTIS ===== */
   .lightning { 
-    position: fixed; 
-    inset: 0; 
-    z-index: 9998; /* Di bawah popup, di atas konten */
+    position: fixed; inset: 0; z-index: 9998; 
     background: radial-gradient(ellipse at 30% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(180, 220, 255, 0.6) 15%, transparent 50%);
-    opacity: 0; 
-    pointer-events: none; 
-    animation: flashStorm 8s infinite; 
-    mix-blend-mode: screen; 
+    opacity: 0; pointer-events: none; animation: flashStorm 8s infinite; mix-blend-mode: screen; 
   }
-  
-  /* Animasi sambaran petir (flicker cepat seperti aslinya) */
   @keyframes flashStorm {
     0%, 100% { opacity: 0; }
-    1% { opacity: 0.8; }
-    2% { opacity: 0.1; }
-    3% { opacity: 0.9; }
-    4% { opacity: 0.2; }
-    5% { opacity: 0.5; }
-    6% { opacity: 0; }
-    40% { opacity: 0; }
-    41% { opacity: 0.7; }
-    42% { opacity: 0; }
-    43% { opacity: 0.4; }
-    44% { opacity: 0; }
+    1% { opacity: 0.8; } 2% { opacity: 0.1; } 3% { opacity: 0.9; } 4% { opacity: 0.2; }
+    5% { opacity: 0.5; } 6% { opacity: 0; } 40% { opacity: 0; } 41% { opacity: 0.7; }
+    42% { opacity: 0; } 43% { opacity: 0.4; } 44% { opacity: 0; }
+  }
+
+  /* ===== EFEK BUNGA SAKURA JATUH (DI DEPAN SEMUA KONTEN & POPUP) ===== */
+  .sakura-container {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; /* Agar tidak menghalangi klik tombol */
+    z-index: 100000; /* Di atas konten utama, popup (99999), dan petir (9998) */
+    overflow: hidden;
+  }
+  .petal {
+    position: absolute;
+    top: -20px;
+    background: radial-gradient(circle at 20% 20%, #ffffff, #ffe6f0 40%, #ffb7c5 80%, #ff8fab 100%);
+    border-radius: 150% 0 150% 0; /* Bentuk kelopak bunga */
+    opacity: 0;
+    will-change: transform, opacity;
+    box-shadow: 0 0 5px rgba(255, 183, 197, 0.6);
+  }
+  
+  @keyframes fallSakura1 {
+    0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.9; } 90% { opacity: 0.9; }
+    100% { transform: translate3d(80px, 110vh, 0) rotate(720deg); opacity: 0; }
+  }
+  @keyframes fallSakura2 {
+    0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.9; } 90% { opacity: 0.9; }
+    100% { transform: translate3d(-60px, 110vh, 0) rotate(-540deg); opacity: 0; }
+  }
+  @keyframes fallSakura3 {
+    0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.9; } 90% { opacity: 0.9; }
+    100% { transform: translate3d(120px, 110vh, 0) rotate(900deg); opacity: 0; }
   }
 
   a { color: inherit; text-decoration: none; }
@@ -176,15 +194,10 @@
     border-radius: 999px;
     cursor: pointer;
     transition: all 0.25s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
   }
   nav.badges a:hover {
-    color: var(--void);
-    background: var(--accent-cyan);
-    border-color: var(--accent-cyan);
+    color: var(--void); background: var(--accent-cyan); border-color: var(--accent-cyan);
     box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
   }
   .nav-badge-logo { height: 16px; width: auto; }
@@ -193,22 +206,13 @@
   .hero {
     max-width: 1280px; margin: 0 auto;
     padding: 80px 28px 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    gap: 48px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; gap: 48px;
     position: relative; z-index: 10;
   }
   .hero-copy { display: flex; flex-direction: column; align-items: flex-start; order: 2; }
   
-  .hero-btns { 
-    display: flex; 
-    gap: 15px; 
-    flex-wrap: wrap; 
-    width: 100%; 
-    max-width: 480px; 
-    margin-bottom: 30px;
-  }
+  .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; width: 100%; max-width: 480px; margin-bottom: 30px; }
   .hero-btns .neon-btn { flex: 1; min-width: 140px; }
   
   .eyebrow {
@@ -231,10 +235,7 @@
   .hero p.lead { color: var(--text-muted); max-width: 520px; font-size: 17px; margin-bottom: 30px; }
 
   /* ===== TABEL INFORMASI ===== */
-  .info-table {
-    margin-top: 0; padding: 24px 28px;
-    width: 100%; max-width: 480px;
-  }
+  .info-table { margin-top: 0; padding: 24px 28px; width: 100%; max-width: 480px; }
   .info-title {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 700; font-size: 14px;
@@ -242,13 +243,11 @@
     color: var(--accent-cyan);
     margin-bottom: 15px;
     border-bottom: 1px solid var(--glass-border);
-    padding-bottom: 10px;
-    text-align: center;
+    padding-bottom: 10px; text-align: center;
   }
   .info-row {
     display: flex; justify-content: space-between; align-items: center;
-    padding: 10px 0;
-    border-bottom: 1px dashed rgba(255,255,255,0.05);
+    padding: 10px 0; border-bottom: 1px dashed rgba(255,255,255,0.05);
   }
   .info-row:last-child { border-bottom: none; }
   .info-label { font-size: 13px; color: var(--text-muted); font-weight: 500; }
@@ -332,8 +331,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .feature-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(0, 242, 255, 0.3);
+    transform: translateY(-5px); border-color: rgba(0, 242, 255, 0.3);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
   }
   .feature-card .num {
@@ -351,8 +349,7 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   .review-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 215, 0, 0.3);
+    transform: translateY(-5px); border-color: rgba(255, 215, 0, 0.3);
     box-shadow: 0 15px 30px rgba(0,0,0,0.3);
   }
   .review-header { display: flex; align-items: center; gap: 14px; }
@@ -362,17 +359,14 @@
     display: flex; align-items: center; justify-content: center;
     font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: #05050a;
     flex-shrink: 0;
-  }
+}
   .review-info h4 { font-size: 15px; font-weight: 700; color: var(--text-main); }
   .review-stars { color: var(--accent-gold); font-size: 14px; letter-spacing: 1px; }
   .review-text { color: var(--text-muted); font-size: 14px; line-height: 1.6; font-style: italic; flex-grow: 1; }
 
   /* ===== FAQ ===== */
   .faq-grid { display: grid; grid-template-columns: 1fr; gap: 15px; max-width: 800px; margin: 0 auto; }
-  .faq-item {
-    padding: 24px 28px; border-radius: 16px;
-    transition: border-color 0.3s ease;
-  }
+  .faq-item { padding: 24px 28px; border-radius: 16px; transition: border-color 0.3s ease; }
   .faq-item:hover { border-color: rgba(255, 215, 0, 0.3); }
   .faq-q { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 18px; color: var(--accent-gold); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
   .faq-q::before { content: 'Q'; background: var(--accent-gold); color: var(--void); width: 24px; height: 24px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 14px; font-family: 'Space Grotesk', sans-serif; }
@@ -381,17 +375,14 @@
   /* ===== FOOTER ===== */
   footer {
     border-top: 1px solid var(--glass-border);
-    padding: 60px 28px 120px; /* Padding bawah ditambah agar tidak tertutup floating btn */
+    padding: 60px 28px 120px;
     position: relative; z-index: 10;
     background: rgba(5, 5, 10, 0.8);
     backdrop-filter: blur(12px);
   }
   .footer-container { max-width: 1280px; margin: 0 auto; }
   .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px; }
-  .footer-col h4 {
-    font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px;
-    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; color: var(--accent-cyan);
-  }
+  .footer-col h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; color: var(--accent-cyan); }
   .footer-col p { font-size: 14px; color: var(--text-muted); margin-bottom: 15px; }
   .footer-col ul { list-style: none; }
   .footer-col ul li { margin-bottom: 10px; }
@@ -399,10 +390,7 @@
   .footer-col ul li a:hover { color: var(--accent-cyan); }
   .footer-brand-logo { height: 50px; margin-bottom: 15px; }
   .pay-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-  .pay-tag {
-    font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px;
-    background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: var(--text-muted);
-  }
+  .pay-tag { font-size: 11px; font-weight: 600; padding: 4px 10px; border-radius: 6px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: var(--text-muted); }
   .copyright { border-top: 1px solid var(--glass-border); padding-top: 20px; text-align: center; font-size: 13px; color: #475569; }
 
   /* ===== WELCOME POPUP LUXURY GOLD ===== */
@@ -492,53 +480,27 @@
 
   /* ===== FLOATING FOOTER MENU (DESKTOP ONLY) ===== */
   .footer-floating-jalak {
-      position: fixed;
-      bottom: 18px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      max-width: 1280px;
-      display: flex;
-      gap: 14px;
-      padding: 12px 20px;
-      background: rgba(5, 5, 10, 0.8);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--glass-border);
-      border-radius: 20px;
-      box-shadow: 0 0 30px rgba(124, 92, 255, 0.3);
-      z-index: 9998;
+      position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
+      width: 100%; max-width: 1280px;
+      display: flex; gap: 14px; padding: 12px 20px;
+      background: rgba(5, 5, 10, 0.8); backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border); border-radius: 20px;
+      box-shadow: 0 0 30px rgba(124, 92, 255, 0.3); z-index: 9998;
   }
 
   .footer-btn-jalak {
-      flex: 1;
-      min-width: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 10px;
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text-main);
-      background: var(--glass-bg);
-      border-radius: 32px;
-      border: 2px solid var(--neon-purple);
-      cursor: pointer;
-      transition: all 0.3s ease;
+      flex: 1; min-width: 0;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 10px; font-family: 'Space Grotesk', sans-serif;
+      font-size: 14px; font-weight: 700; color: var(--text-main);
+      background: var(--glass-bg); border-radius: 32px; border: 2px solid var(--neon-purple);
+      cursor: pointer; transition: all 0.3s ease;
       box-shadow: 0 0 10px rgba(124, 92, 255, 0.3), inset 0 0 8px rgba(124, 92, 255, 0.1);
       animation: floatUpDown 3s ease-in-out infinite;
-      text-decoration: none;
-      user-select: none;
-      white-space: nowrap;
-      text-transform: uppercase;
+      text-decoration: none; user-select: none; white-space: nowrap; text-transform: uppercase;
   }
 
-  .footer-btn-jalak amp-img {
-      width: 18px;
-      height: 18px;
-      flex-shrink: 0;
-  }
+  .footer-btn-jalak amp-img { width: 18px; height: 18px; flex-shrink: 0; }
 
   .footer-btn-jalak.promo { animation-delay: 0s; border-color: var(--accent-gold); box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
   .footer-btn-jalak.login { animation-delay: 0.3s; }
@@ -547,24 +509,15 @@
   .footer-btn-jalak.chat { animation-delay: 1.2s; border-color: var(--accent-gold); box-shadow: 0 0 10px rgba(255, 215, 0, 0.3); }
 
   .footer-btn-jalak:hover {
-      background: rgba(124, 92, 255, 0.2);
-      color: #fff;
-      border-color: var(--accent-cyan);
+      background: rgba(124, 92, 255, 0.2); color: #fff; border-color: var(--accent-cyan);
       box-shadow: 0 0 15px var(--accent-cyan), 0 0 30px rgba(0, 242, 255, 0.4);
       transform: translateY(-6px) scale(1.05);
   }
 
-  @keyframes floatUpDown {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-      100% { transform: translateY(0); }
-  }
+  @keyframes floatUpDown { 0% { transform: translateY(0); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
 
-  /* Sembunyikan floating menu di layar TABLET & MOBILE */
   @media (max-width: 1024px) {
-      .footer-floating-jalak {
-          display: none !important;
-      }
+      .footer-floating-jalak { display: none !important; }
   }
 
   /* ===== RESPONSIVE UTAMA ===== */
@@ -574,7 +527,7 @@
     .hero { grid-template-columns: 1fr; text-align: center; }
     .hero-copy { align-items: center; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
-    footer { padding-bottom: 60px; } /* Normalkan padding bawah footer di mobile */
+    footer { padding-bottom: 60px; } 
   }
   @media(max-width:520px){
     .mini-thumbs { grid-template-columns: repeat(3, 1fr); }
@@ -609,8 +562,8 @@
     <amp-img src="https://ik.imagekit.io/i22mizicx/dgh.png" alt="Banner JALAK4D" width="800" height="1000" layout="responsive" class="popup-image"></amp-img>
     
     <div class="clk-btn-sgp">
-      <a href="https://mauaja.link/aksesmudahjalak" class="login">LOGIN</a>
-      <a href="https://mauaja.link/aksesmudahjalak" class="register">DAFTAR</a>
+      <a href="https://jalakamp.vercel.app/" class="login">LOGIN</a>
+      <a href="https://jalakamp.vercel.app/" class="register">DAFTAR</a>
     </div>
     
     <div class="popup-footer">
@@ -626,8 +579,8 @@
       <amp-img src="https://ik.imagekit.io/i22mizicx/ui.png" alt="Logo JALAK4D" width="150" height="50" layout="fixed"></amp-img>
     </a>
     <div class="nav-btns">
-      <a href="https://mauaja.link/aksesmudahjalak" class="neon-btn">Login</a>
-      <a href="https://mauaja.link/aksesmudahjalak" class="neon-btn">Daftar</a>
+      <a href="https://jalakamp.vercel.app/" class="neon-btn">Login</a>
+      <a href="https://jalakamp.vercel.app/" class="neon-btn">Daftar</a>
     </div>
   </div>
   <div class="subnav-wrap">
@@ -656,8 +609,8 @@
       </p>
       
       <div class="hero-btns">
-        <a href="https://mauaja.link/aksesmudahjalak" class="neon-btn large">LOGIN</a>
-        <a href="https://mauaja.link/aksesmudahjalak" class="neon-btn large">DAFTAR</a>
+        <a href="https://jalakamp.vercel.app/" class="neon-btn large">LOGIN</a>
+        <a href="https://jalakamp.vercel.app/" class="neon-btn large">DAFTAR</a>
       </div>
 
       <div class="glass info-table">
@@ -828,10 +781,10 @@
       <div class="footer-col">
         <h4>Permainan</h4>
         <ul>
-          <li><a href="https://mauaja.link/aksesmudahjalak">Slot Online</a></li>
-          <li><a href="https://mauaja.link/aksesmudahjalak">Live Casino</a></li>
-          <li><a href="https://mauaja.link/aksesmudahjalak">Togel 4D</a></li>
-          <li><a href="https://mauaja.link/aksesmudahjalak">Sportsbook</a></li>
+          <li><a href="https://jalakamp.vercel.app/">Slot Online</a></li>
+          <li><a href="https://jalakamp.vercel.app/">Live Casino</a></li>
+          <li><a href="https://jalakamp.vercel.app/">Togel 4D</a></li>
+          <li><a href="https://jalakamp.vercel.app/">Sportsbook</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -848,21 +801,41 @@
 
 <!-- ===== FLOATING FOOTER MENU (DESKTOP ONLY) ===== -->
 <div class="footer-floating-jalak">
-    <a href="https://mauaja.link/aksesmudahjalak" class="footer-btn-jalak promo" target="_blank" rel="nofollow noopener">
+    <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak promo" target="_blank" rel="nofollow noopener">
         <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Promo" width="18" height="18" layout="fixed"></amp-img> PROMO
     </a>
-    <a href="https://mauaja.link/aksesmudahjalak" class="footer-btn-jalak login" target="_blank" rel="nofollow noopener">
+    <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak login" target="_blank" rel="nofollow noopener">
         <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Login" width="18" height="18" layout="fixed"></amp-img> LOGIN
     </a>
-    <a href="https://mauaja.link/aksesmudahjalak" class="footer-btn-jalak daftar" target="_blank" rel="nofollow noopener">
+    <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak daftar" target="_blank" rel="nofollow noopener">
         <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Daftar" width="18" height="18" layout="fixed"></amp-img> DAFTAR
     </a>
-    <a href="https://mauaja.link/aksesmudahjalak" class="footer-btn-jalak link" target="_blank" rel="nofollow noopener">
+    <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak link" target="_blank" rel="nofollow noopener">
         <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Link Alternatif" width="18" height="18" layout="fixed"></amp-img> LINK ALTERNATIF
     </a>
-    <a href="https://mauaja.link/aksesmudahjalak" class="footer-btn-jalak chat" target="_blank" rel="nofollow noopener">
+    <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak chat" target="_blank" rel="nofollow noopener">
         <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Live Chat" width="18" height="18" layout="fixed"></amp-img> LIVE CHAT
     </a>
+</div>
+
+<!-- ===== EFEK BUNGA SAKURA JATUH (DI DEPAN SEMUA KONTEN & POPUP) ===== -->
+<div class="sakura-container">
+  <span class="petal" style="left: 5%; animation: fallSakura1 8s linear infinite; width: 12px; height: 12px;"></span>
+  <span class="petal" style="left: 12%; animation: fallSakura2 12s linear infinite; animation-delay: 2s; width: 16px; height: 16px;"></span>
+  <span class="petal" style="left: 20%; animation: fallSakura3 10s linear infinite; animation-delay: 5s; width: 9px; height: 9px;"></span>
+  <span class="petal" style="left: 28%; animation: fallSakura1 14s linear infinite; animation-delay: 1s; width: 14px; height: 14px;"></span>
+  <span class="petal" style="left: 35%; animation: fallSakura2 9s linear infinite; animation-delay: 4s; width: 11px; height: 11px;"></span>
+  <span class="petal" style="left: 42%; animation: fallSakura3 11s linear infinite; animation-delay: 6s; width: 18px; height: 18px;"></span>
+  <span class="petal" style="left: 50%; animation: fallSakura1 13s linear infinite; animation-delay: 0s; width: 10px; height: 10px;"></span>
+  <span class="petal" style="left: 58%; animation: fallSakura2 8s linear infinite; animation-delay: 3s; width: 13px; height: 13px;"></span>
+  <span class="petal" style="left: 65%; animation: fallSakura3 15s linear infinite; animation-delay: 7s; width: 17px; height: 17px;"></span>
+  <span class="petal" style="left: 72%; animation: fallSakura1 10s linear infinite; animation-delay: 2.5s; width: 9px; height: 9px;"></span>
+  <span class="petal" style="left: 80%; animation: fallSakura2 12s linear infinite; animation-delay: 5.5s; width: 15px; height: 15px;"></span>
+  <span class="petal" style="left: 88%; animation: fallSakura3 9s linear infinite; animation-delay: 1.5s; width: 12px; height: 12px;"></span>
+  <span class="petal" style="left: 95%; animation: fallSakura1 11s linear infinite; animation-delay: 4.5s; width: 14px; height: 14px;"></span>
+  <span class="petal" style="left: 15%; animation: fallSakura3 16s linear infinite; animation-delay: 8s; width: 10px; height: 10px;"></span>
+  <span class="petal" style="left: 45%; animation: fallSakura2 17s linear infinite; animation-delay: 10s; width: 16px; height: 16px;"></span>
+  <span class="petal" style="left: 75%; animation: fallSakura1 18s linear infinite; animation-delay: 12s; width: 11px; height: 11px;"></span>
 </div>
 
 </body>
