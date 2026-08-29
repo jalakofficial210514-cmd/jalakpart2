@@ -29,7 +29,7 @@
 <script async src="https://cdn.ampproject.org/v0.js"></script>
 <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
 
-<!-- AMP Boilerplate CSS (Standard AMP) -->
+<!-- AMP Boilerplate CSS -->
 <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
 
 <!-- Google Fonts -->
@@ -60,7 +60,7 @@
     position:relative;
   }
 
-  /* ===== LATAR BELAKANG DIPERBAIKI (LEBIH TERANG) ===== */
+  /* ===== LATAR BELAKANG ===== */
   .bg-image {
     position: fixed; inset:-20px; z-index:-3;
     background: url('https://ik.imagekit.io/i22mizicx/fghjfr.png') center center / cover no-repeat;
@@ -68,7 +68,7 @@
   }
   .overlay { position: fixed; inset:0; background: rgba(0,0,0,0.35); z-index:-2; }
   
-  /* ===== EFEK PETIR REALISTIS ===== */
+  /* ===== EFEK PETIR ===== */
   .lightning { 
     position: fixed; inset: 0; z-index: 9998; 
     background: radial-gradient(ellipse at 30% 0%, rgba(255, 255, 255, 0.95) 0%, rgba(180, 220, 255, 0.6) 15%, transparent 50%);
@@ -81,7 +81,7 @@
     42% { opacity: 0; } 43% { opacity: 0.4; } 44% { opacity: 0; }
   }
 
-  /* ===== EFEK BUNGA SAKURA JATUH (DI DEPAN SEMUA KONTEN & POPUP) ===== */
+  /* ===== EFEK BUNGA SAKURA ===== */
   .sakura-container {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -98,7 +98,6 @@
     will-change: transform, opacity;
     box-shadow: 0 0 5px rgba(255, 183, 197, 0.6);
   }
-  
   @keyframes fallSakura1 {
     0% { transform: translate3d(0, -10vh, 0) rotate(0deg); opacity: 0; }
     10% { opacity: 0.9; } 90% { opacity: 0.9; }
@@ -391,7 +390,7 @@
     background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
     display: flex; justify-content: center; align-items: center; z-index: 99999;
   }
-  .popup-hide { display: none !important; }
+  .popup-hide { display: none; } /* !important dihapus */
   
   .popup-container {
     position: relative; width: 90%; max-width: 420px;
@@ -441,9 +440,11 @@
   }
   .clk-btn-sgp a:hover::after { opacity: 1; }
   .clk-btn-sgp a:hover { transform: translateY(-6px) scale(1.03); border-color: #ffd700; }
-  .login { color: #ffd700 !important; background: linear-gradient(145deg, #535050, #000000); border: 2px solid #cabe0c; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
-  .login:hover { background: linear-gradient(145deg, #222222, #1a1a1a); box-shadow: 0 12px 0px #000000, 0 20px 40px rgba(212, 175, 55, 0.4), 0 0 30px rgba(255, 215, 0, 0.2); color: #fff8dc !important; }
-  .register { color: #000000 !important; background: linear-gradient(145deg, #faea07, #cabe0c); border: 2px solid #000000; text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3); }
+  
+  /* !important dihapus di sini */
+  .login { color: #ffd700; background: linear-gradient(145deg, #535050, #000000); border: 2px solid #cabe0c; text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); }
+  .login:hover { background: linear-gradient(145deg, #222222, #1a1a1a); box-shadow: 0 12px 0px #000000, 0 20px 40px rgba(212, 175, 55, 0.4), 0 0 30px rgba(255, 215, 0, 0.2); color: #fff8dc; }
+  .register { color: #000000; background: linear-gradient(145deg, #faea07, #cabe0c); border: 2px solid #000000; text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3); }
   .register:hover { background: linear-gradient(145deg, #ffd700, #faea07); box-shadow: 0 12px 0px #000000, 0 20px 40px rgba(212, 175, 55, 0.5), 0 0 35px rgba(255, 215, 0, 0.3); }
   
   .popup-footer { font-size: 13px; color: #ccc; padding: 20px 10px; position: relative; z-index: 3; line-height: 1.6; font-family: 'Playfair Display', serif; }
@@ -470,7 +471,7 @@
   .close-btn:hover { background: rgba(212, 175, 55, 0.8); transform: rotate(90deg); color: #000; }
   .close-btn::before { content: '×'; font-family: sans-serif; font-weight: bold; }
 
-  /* ===== FLOATING FOOTER MENU (DESKTOP ONLY) ===== */
+  /* ===== FLOATING FOOTER MENU ===== */
   .footer-floating-jalak {
       position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%);
       width: 100%; max-width: 1280px;
@@ -508,8 +509,9 @@
 
   @keyframes floatUpDown { 0% { transform: translateY(0); } 50% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
 
+  /* !important dihapus di sini */
   @media (max-width: 1024px) {
-      .footer-floating-jalak { display: none !important; }
+      .footer-floating-jalak { display: none; }
   }
 
   /* ===== RESPONSIVE UTAMA ===== */
@@ -535,7 +537,7 @@
 </head>
 <body>
 
-<!-- AMP State untuk Interaksi Popup (Dipindahkan ke body agar valid di AMP Validator) -->
+<!-- AMP State untuk Interaksi Popup -->
 <amp-state id="ui">
   <script type="application/json">
   { "popupOpen": true }
@@ -798,7 +800,7 @@
   </div>
 </footer>
 
-<!-- ===== FLOATING FOOTER MENU (DESKTOP ONLY) ===== -->
+<!-- ===== FLOATING FOOTER MENU ===== -->
 <div class="footer-floating-jalak">
     <a href="https://jalakamp.vercel.app/" class="footer-btn-jalak promo" target="_blank" rel="nofollow noopener">
         <amp-img src="https://ik.imagekit.io/i22mizicx/jhk.png" alt="Promo" width="18" height="18" layout="fixed"></amp-img> PROMO
@@ -817,7 +819,7 @@
     </a>
 </div>
 
-<!-- ===== EFEK BUNGA SAKURA JATUH (DI DEPAN SEMUA KONTEN & POPUP) ===== -->
+<!-- ===== EFEK BUNGA SAKURA JATUH ===== -->
 <div class="sakura-container">
   <span class="petal" style="left: 5%; animation: fallSakura1 8s linear infinite; width: 12px; height: 12px;"></span>
   <span class="petal" style="left: 12%; animation: fallSakura2 12s linear infinite; animation-delay: 2s; width: 16px; height: 16px;"></span>
